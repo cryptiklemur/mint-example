@@ -28,7 +28,7 @@ Imagine a business that needs to do constant A/B testing to test new features an
 4. Update the permlink type to anything but `Plain` in http://localhost/wp-admin/options-permalink.php
    1. Needed to enable /wp-json endpoint....
 5. Head to `http://localhost/`
-6. Hit <a href="http://localhost:9090/reset-variant">http://localhost:9090/reset-variant</a> to clear the variant
+6. Hit <a href="http://localhost:9090/reset-variant">http://localhost:9090/reset-variant</a> to clear the variant (or clear cookies)
 
 ### Elaboration
 
