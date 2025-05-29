@@ -1,0 +1,23 @@
+http:
+  routers:
+    main-router:
+      rule: "PathPrefix(`/`)"
+      service: ab-split
+      entryPoints:
+        - web
+
+  services:
+    ab-split:
+      weighted:
+        services:
+          - name: frontend-a@docker
+            weight: 20
+          - name: frontend-b@docker
+            weight: 30
+          - name: wordpress@docker
+            weight: 50
+        sticky:
+          cookie:
+            name: "ab_variant"
+            httpOnly: true
+            secure: false
