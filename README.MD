@@ -26,7 +26,9 @@ Imagine a business that needs to do constant A/B testing to test new features an
 2. Run `docker compose up -d`
 3. Head to `http://localhost/wp-admin` and set up wordpress
 4. Update the permlink type to anything but `Plain` in http://localhost/wp-admin/options-permalink.php
-4. Head to `http://localhost/`
+   1. Needed to enable /wp-json endpoint....
+5. Head to `http://localhost/`
+6. Hit <a href="http://localhost:9090/reset-variant">http://localhost:9090/reset-variant</a> to clear the variant
 
 ### Elaboration
 

@@ -1,7 +1,7 @@
 http:
   routers:
     wp-admin-router:
-      rule: "PathPrefix(`/wp-admin`)"
+      rule: "PathPrefix(`/wp-`)"
       service: wordpress@docker
       entryPoints:
         - web
