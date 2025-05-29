@@ -14,9 +14,7 @@ const redis = await createClient({url: process.env.REDIS_URL})
 
 app.use(cors({origin: true}));
 
-app.get('/', (req, res) => {
-  res.send('👋 Hello from stupid simple API');
-});
+app.get('/', (req, res) => res.redirect('http://localhost'));
 
 app.get('/homepage', async (req, res) => {
   // Adding delay to show loader/pre-rendering on frontend

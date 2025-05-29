@@ -25,19 +25,21 @@ Imagine a business that needs to do constant A/B testing to test new features an
 1. copy `.env.dist` to `.env`
 2. Run `docker compose up -d`
 3. Head to `http://localhost:3004` and set up wordpress
+4. Update the permlink type to anything but `Plain` in http://localhost:3004/wp-admin/options-permalink.php
 4. Head to `http://localhost/`
 
 ### Elaboration
 
 1. How would you set up the infrastructure
 
-    I've set up the infrastructure in this repo. The gist of it is to have a load balancer (specifically traefik) in front of the apps
+   I've set up the infrastructure in this repo. The gist of it is to have a load balancer (specifically traefik) in front of the apps
 
 2. How would you make sure the experience is optimized and backends can be served quickly and efficiently?
 
-    This is a more involved question that would depend on requirements and potential throughout (don't want to spend unnecessarily).
-    I've added caching to the api endpoint that fetches the home page, as an example. This pattern could be extended out. In the case of using Next.js's SSG, you do get a boon to user experience as theres no loading screens. In production, this would also be cached, and revalidation would happen on the backend.
-    Along with this, i would add Cloudflare in front of this, to take *huge* advantage of their caching network, ensuring users across the US are being delivered the cached content at the edge.
+   This is a more involved question that would depend on requirements and potential throughout (don't want to spend unnecessarily).
+   I've added caching to the api endpoint that fetches the home page, as an example. This pattern could be extended out. In the case of using Next.js's SSG, you do get a boon to user experience as theres no loading screens. In production, this would also be cached, and revalidation would happen on the backend.
+   Along with this, i would add Cloudflare in front of this, to take *huge* advantage of their caching network, ensuring users across the US are being delivered the cached content at the edge.
+   Also, looking into better caching in wordpress itself, integrating redis into its flow.
 
 3. How would you measure traffic going to the different backends and gather the amount of visitors being sent there?
 
