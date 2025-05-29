@@ -12,7 +12,6 @@ services:
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
       - --providers.file.filename=/etc/traefik/dynamic_conf.yml
-      - --entrypoints.web.address=:80
     ports:
       - "80:80"
       - "8080:8080" # Dashboard

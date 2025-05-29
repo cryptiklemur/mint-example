@@ -1,5 +1,10 @@
 http:
   routers:
+    wp-admin-router:
+      rule: "PathPrefix(`/wp-admin`)"
+      service: wordpress@docker
+      entryPoints:
+        - web
     main-router:
       rule: "PathPrefix(`/`)"
       service: ab-split

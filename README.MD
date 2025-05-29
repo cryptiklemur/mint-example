@@ -24,8 +24,8 @@ Imagine a business that needs to do constant A/B testing to test new features an
 
 1. copy `.env.dist` to `.env`
 2. Run `docker compose up -d`
-3. Head to `http://localhost:3004` and set up wordpress
-4. Update the permlink type to anything but `Plain` in http://localhost:3004/wp-admin/options-permalink.php
+3. Head to `http://localhost/wp-admin` and set up wordpress
+4. Update the permlink type to anything but `Plain` in http://localhost/wp-admin/options-permalink.php
 4. Head to `http://localhost/`
 
 ### Elaboration
